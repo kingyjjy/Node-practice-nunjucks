@@ -1,0 +1,49 @@
+{% set node = 'Node.js' %}
+{% set js = 'JavaScript' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to {{title}}</title>
+</head>
+<body>
+    <p>{{js}}로 만든 {{node}}</p>
+    <button type="submit">{{title}}</button>
+    <input placeholder="넌적스 연습"/>
+
+    <h1>escape</h1>
+    <p>{{'<strong>이스케이프</strong>'}}</p>
+    <p>{{'<strong>이스케이프</strong>' | safe }}</p>
+
+    <h1>배열</h1>
+    <ul>
+        {% set weeks = ['일','월','화','수','목','금','토']%}
+        {% for week in weeks %}
+        <li>{{loop.index}}번째 : {{week}}</li>
+        {% endfor %}
+    </ul>
+
+    <h1>조건문-선택문은 없음.</h1>
+    {% set isLoggedIn = true %}
+    {% if isLoggedIn %}
+        <p>로그인 되었습니다</p>
+    {% else %}
+        <p>손님입니다</p>
+    {% endif %}
+
+    <h1>선택문</h1>
+    {% set fruit = 'apple' %}
+    {% if fruit === 'apple' %}
+        <p>사과입니다</p>
+    {% elif fruit === 'banana' %}
+        <p>바나나입니다</p>
+    {% elif fruit === 'kewi' %}
+        <p>키위입니다</p>
+    {% elif fruit === 'orange' %}
+        <p>오렌지입니다</p>
+    {% else %} 
+        <p>사과,바나나,키위,오렌지가 아님</p>
+    {% endif %}
+</body>
+</html>
