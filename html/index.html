@@ -1,49 +1,45 @@
-{% set node = 'Node.js' %}
-{% set js = 'JavaScript' %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to {{title}}</title>
-</head>
-<body>
-    <p>{{js}}로 만든 {{node}}</p>
-    <button type="submit">{{title}}</button>
-    <input placeholder="넌적스 연습"/>
+{% extends 'layout.html' %}
 
-    <h1>escape</h1>
-    <p>{{'<strong>이스케이프</strong>'}}</p>
-    <p>{{'<strong>이스케이프</strong>' | safe }}</p>
 
-    <h1>배열</h1>
-    <ul>
-        {% set weeks = ['일','월','화','수','목','금','토']%}
-        {% for week in weeks %}
-        <li>{{loop.index}}번째 : {{week}}</li>
-        {% endfor %}
+
+{% block aside %}
+    <h2>About Me</h2>
+    <h5>Photo of me:</h5>
+    <div class="fakeimg">Fake Image</div>
+    <p>Some text about me in culpa qui officia deserunt mollit anim..</p>
+    <h3>Some Links</h3>
+    <p>Lorem ipsum dolor sit ame.</p>
+    <ul class="nav nav-pills flex-column">
+      <li class="nav-item">
+        <a class="nav-link active" href="#">Active</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Link</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Link</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#">Disabled</a>
+      </li>
     </ul>
+    <hr class="d-sm-none">
 
-    <h1>조건문-선택문은 없음.</h1>
-    {% set isLoggedIn = true %}
-    {% if isLoggedIn %}
-        <p>로그인 되었습니다</p>
-    {% else %}
-        <p>손님입니다</p>
-    {% endif %}
+{% endblock %}
 
-    <h1>선택문</h1>
-    {% set fruit = 'apple' %}
-    {% if fruit === 'apple' %}
-        <p>사과입니다</p>
-    {% elif fruit === 'banana' %}
-        <p>바나나입니다</p>
-    {% elif fruit === 'kewi' %}
-        <p>키위입니다</p>
-    {% elif fruit === 'orange' %}
-        <p>오렌지입니다</p>
-    {% else %} 
-        <p>사과,바나나,키위,오렌지가 아님</p>
-    {% endif %}
-</body>
-</html>
+
+
+{% block content %}
+<h2>TITLE HEADING</h2>
+            <h5>Title description, Dec 7, 2017</h5>
+            <div class="fakeimg">Fake Image</div>
+            <p>Some text..</p>
+            <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+            <br>
+            <h2>TITLE HEADING</h2>
+            <h5>Title description, Sep 2, 2017</h5>
+            <div class="fakeimg">Fake Image</div>
+            <p>Some text..</p>
+            <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+
+{% endblock %}
